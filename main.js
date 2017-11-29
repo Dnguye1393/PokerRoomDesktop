@@ -30,6 +30,20 @@ app.on('ready', function() {
 //create Menu Template
 const mainMenuTemplate= [
 	{
-		label:'File'
+		label:'File',
+    submenu:[
+      {
+        label:  'Add Table'
+      },
+      {
+        label: 'Clear Tables'
+      },
+      {
+        label: 'Quit',
+        click(){
+          app.quit();
+        }
+      }
+    ]
 	}
 ];
