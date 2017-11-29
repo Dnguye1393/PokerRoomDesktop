@@ -1,0 +1,14 @@
+{
+  "name": "pokerroom",
+  "version": "1.0.0",
+  "description": "Poker Room Application to handle Cash Games and Tournaments",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "David Nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.7.9"
+  }
+}
