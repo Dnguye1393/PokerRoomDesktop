@@ -1,14 +1,21 @@
 {
   "name": "pokerroom",
+  "productName": "PokerRoom",
   "version": "1.0.0",
   "description": "Poker Room Application to handle Cash Games and Tournaments",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-win": "electron-packager . pokerroom --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/poker-chips.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"PokerRoom\"",    
+    "package-linux": "electron-packager . pokerroom --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/poker-chips.png --prune=true --out=release-builds"
+  
   },
   "author": "David Nguyen",
   "license": "MIT",
   "dependencies": {
     "electron": "^1.7.9"
+  },
+  "devDependencies": {
+    "electron-packager": "^10.1.0"
   }
 }
