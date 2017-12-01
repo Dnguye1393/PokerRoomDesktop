@@ -27,19 +27,40 @@ app.on('ready', function() {
 	//Insert menu
 	Menu.setApplicationMenu(mainMenu);
 });
+
+//Handle Create add Window
+function createAddWindow(){
+  addWindow = new BrowserWindow({
+    width: 300,
+    height: 600,
+    title:'New Table'
+  });
+  addWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'addWindow.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+}
+
+
 //create Menu Template
 const mainMenuTemplate= [
 	{
 		label:'File',
     submenu:[
       {
-        label:  'Add Table'
+        label:  'Add Table',
+        click(){
+          createAddWindow();
+        }
       },
       {
         label: 'Clear Tables'
       },
       {
         label: 'Quit',
+        //Shortcut
+        accelerator: process.platform == 'darwin' ? 'Command+Q': 'Ctrl+Q',
         click(){
           app.quit();
         }
