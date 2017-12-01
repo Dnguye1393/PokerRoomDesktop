@@ -1,7 +1,9 @@
 const electron = require('electron')
 const url = require('url')
 const path = require('path')
+var log = require('electron-log');
 
+log.info('App is starting');
 
 const {
   app,
@@ -62,6 +64,7 @@ const mainMenuTemplate= [
         //Shortcut
         accelerator: process.platform == 'darwin' ? 'Command+Q': 'Ctrl+Q',
         click(){
+          log.info('App is closing');
           app.quit();
         }
       }
