@@ -63,5 +63,4 @@ typings/
 release-builds/
 
 #data Folder
-data/
-!data/.gitkeep
+*.db
