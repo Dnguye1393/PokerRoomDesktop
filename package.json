@@ -12,11 +12,16 @@
   "author": "David Nguyen",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "electron": "^1.7.9",
     "electron-about-window": "^1.8.0",
     "electron-builder": "^19.47.1",
     "electron-log": "^2.2.11",
-    "react-desktop": "^0.3.3"
+    "nedb": "^1.8.0",
+    "radium": "^0.19.6",
+    "react": "^16.2.0",
+    "react-desktop": "^0.3.3",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "electron": "^1.8.1",

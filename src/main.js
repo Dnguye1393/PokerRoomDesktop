@@ -2,9 +2,12 @@ const electron = require('electron')
 const url = require('url')
 const path = require('path')
 var log = require('electron-log');
+var maindb = require('./db/casino-main-database.js');
+
+
 
 log.info('App is starting');
-
+maindb.initDatabase();
 const {
   app,
   BrowserWindow,
@@ -12,6 +15,8 @@ const {
 } = electron;
 
 let mainWindow;
+
+//test.printHello();
 
 // Listen for the app to be ready
 app.on('ready', function() {
@@ -33,8 +38,8 @@ app.on('ready', function() {
 //Handle Create add Window
 function createAddWindow(){
   addWindow = new BrowserWindow({
-    width: 300,
-    height: 600,
+    width: 1200,
+    height: 800,
     title:'New Table'
   });
   addWindow.loadURL(url.format({
@@ -42,6 +47,10 @@ function createAddWindow(){
     protocol: 'file:',
     slashes: true
   }));
+
+  addWindow.on('close', function(){
+    addWindow = null;
+  })
 }
 
 
